@@ -4,18 +4,70 @@
   "info": {
     "singularName": "product",
     "pluralName": "products",
-    "displayName": "product"
+    "displayName": "product",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
   },
   "pluginOptions": {},
   "attributes": {
-    "name": {
+    "title": {
       "type": "string",
       "required": true,
       "maxLength": 50,
       "minLength": 2
+    },
+    "slug": {
+      "type": "uid",
+      "required": true,
+      "minLength": 3,
+      "maxLength": 111
+    },
+    "description": {
+      "type": "text"
+    },
+    "image": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "category": {
+      "type": "enumeration",
+      "enum": [
+        "tshirt",
+        "hoodies",
+        "badmintons",
+        "jeans"
+      ],
+      "default": "tshirt",
+      "required": true
+    },
+    "size": {
+      "type": "string",
+      "maxLength": 70
+    },
+    "color": {
+      "type": "enumeration",
+      "enum": [
+        "blue",
+        "green ",
+        "violet",
+        "black",
+        "white",
+        "purple"
+      ],
+      "required": true
+    },
+    "price": {
+      "type": "integer",
+      "required": true
+    },
+    "availableQty": {
+      "type": "integer",
+      "required": true
     }
   }
 }
